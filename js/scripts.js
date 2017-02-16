@@ -1,23 +1,19 @@
 
 $(document).ready(function() {
-  var animal = prompt("Type your favorite animal. Turtles, Ferrets, or Squirrels?");
+  $("form#an").submit(function(event){
+    var animal = $("#animal").val();
+    console.log(animal);
+    event.preventDefault();
 
-  if (animal === "Turtles") {
-    $('#turtle').show();
-  }
-    else if
-    (animal ==="Ferrets"){
+    if (animal === "Turtles") {
+      $("#ferret, #squirrel").hide();
+      $("#turtle").show();
+    } else if (animal === "Squirrels") {
+      $("#ferret, #turtle").hide();
+      $("#squirrel").show();
+    } else if (animal === "Ferrets") {
+      $("#turtle, #squirrel").hide();
       $("#ferret").show();
-
-
-  }
-    else if
-    (animal ==="Squirrels"){
-      ("#squirrel").show();
-
-  }
-    else {
-    prompt("Type your favorite animal. Turtles, Ferrets, or Squirrels?");
-  }
-
+    }
+  });
 });
